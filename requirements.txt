@@ -3,4 +3,7 @@ numpy
 selenium
 beautifulsoup4
 requests
-e.
+matplotlib
+statsmodels
+scikit-learn
+# e.
