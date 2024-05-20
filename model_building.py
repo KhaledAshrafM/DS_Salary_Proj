@@ -88,3 +88,19 @@ print(mean_absolute_error(y_test, preds_lasso))
 print(mean_absolute_error(y_test, preds_rf))
 
 print(mean_absolute_error(y_test, preds_lasso+preds_rf)/2)
+
+# Sava Model
+import pickle
+import joblib
+job = {'model': gs_final}
+joblib.dump(job, 'FlaskAPI/models/model1.joblib')
+pick1 = {'model': gs_final}
+pickle.dump(pick1, open('FlaskAPI/models/model.pkl', 'wb'))
+
+# Load Model
+file_name = "FlaskAPI/models/model.pkl"
+with open(file_name, 'rb') as pickled:
+    data = pickle.load(pickled)
+    model = data['model']
+
+model.predict(X_test.iloc[1, :].values.reshape(1, -1))
