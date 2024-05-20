@@ -6,4 +6,5 @@ requests
 matplotlib
 statsmodels
 scikit-learn
+flask
 # e.
